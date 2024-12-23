@@ -1,0 +1,126 @@
+/* Estilo base */
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#cone {
+    cursor: pointer;
+    position: absolute;
+    bottom: 10%; /* Ajustado para móviles */
+    width: 100px; /* Tamaño reducido */
+    height: auto;
+}
+
+#message {
+    position: absolute;
+    top: 15%; /* Ajustado para móviles */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4vw; /* Escalado responsivo */
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px red, 0 0 10px green, 0 0 10px blue;
+    animation: blink 1s infinite;
+    display: none;
+}
+
+#dedication {
+    position: absolute;
+    top: 40%; /* Ajustado para móviles */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3vw; /* Escalado responsivo */
+    color: #fff;
+    text-align: center;
+    width: 90%; /* Ajustado para móviles */
+    display: none;
+}
+
+#special-image {
+    position: absolute;
+    top: 70%; /* Ajustado para móviles */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px; /* Tamaño reducido */
+    height: auto;
+    display: none;
+    cursor: pointer;
+}
+
+.confetti {
+    position: absolute;
+    width: 7px; /* Tamaño reducido para móviles */
+    height: 7px;
+    background-color: red;
+    opacity: 0.8;
+    border-radius: 50%;
+    animation: fall 3s linear infinite;
+}
+
+.star {
+    position: absolute;
+    width: 10px; /* Tamaño reducido */
+    height: 10px;
+    background-color: yellow;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: riseUp 1s linear;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+@keyframes riseUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px); /* Ajuste menor */
+        opacity: 0;
+    }
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 600px) {
+    #cone {
+        width: 80px;
+    }
+
+    #message {
+        font-size: 5vw;
+    }
+
+    #dedication {
+        font-size: 4vw;
+        top: 35%;
+    }
+
+    #special-image {
+        width: 100px;
+    }
+
+    .confetti {
+        width: 5px;
+        height: 5px;
+    }
+
+    .star {
+        width: 8px;
+        height: 8px;
+    }
+}
